@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign up</title>
+    <link rel="stylesheet" type="text/css" href="Expense.css">
+</head>
+<body>
+    <header>
+       <h1>Expense Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign up</a></li>
+                <li><a href="Expense.html">Expense</a></li>
+                <li><a href="Profile.php">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sign-auth-container">
+    <div class="sign-auth-box">
+        <div class="sign-auth-header">
+            <h2>Welcome To Expense Tracker</h2>
+            <h2>Join us to plan, track, and manage your finances</h2>
+        </div>
+        <div class="sign-signup-container">
+            <form id="sign-signup-form" class="sign-signup-form" action="signup.php" method="post">
+                <h3>Sign Up</h3>
+                <label for="sign-name" style="color: rgb(58, 54, 54);">Name:</label>
+                <input type="text" id="sign-name" name="name" placeholder="Enter your name" required>
+                
+                <label for="sign-email" style="color: rgb(70, 67, 67);">Email:</label>
+                <input type="email" id="sign-email" name="email" placeholder="Enter your email" required>
+                
+                <label for="sign-age" style="color: rgb(58, 57, 57);">Age:</label>
+                <input type="number" id="sign-age" name="age" placeholder="Enter your age" required>
+                
+                <label for="sign-password" style="color: rgb(63, 61, 61);">Password:</label>
+                <input type="password" id="sign-password" name="password" placeholder="Enter your password" required>
+                
+                <button type="submit" class="sign-submit-button">Sign Up</button>
+
+                <p>Already have an account? <a href="Login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+    <script>
+  document.getElementById('sign-signup-form').onsubmit = function() {
+      var password = document.getElementById('sign-password').value;
+      var confirmPassword = document.getElementById('sign-confirm-password').value;
+      
+      if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return false; // Prevent form submission
+      }
+      return true;
+  };
+</script>
+
+    
+</body>
+</html>
